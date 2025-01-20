@@ -2,9 +2,9 @@ import unittest
 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
-from src.model.idcard.IdCard import IdCardType, Gender
-from src.service.idcard.IdCardGenerator import IdCardGenerator
-from src.service.idcard.IdCardValidator import IdCardValidator
+from testdata.model.idcard.IdCard import IdCardType, Gender
+from testdata.service.idcard.IdCardGenerator import IdCardGenerator
+from testdata.service.idcard.IdCardValidator import IdCardValidator
 
 class TestIdCardGenerator(unittest.TestCase):
 

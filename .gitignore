@@ -18,6 +18,11 @@ target/
 *.iml
 *.ipr
 
+/dist/*
+/dist
+.venv/
+poetry.lock
+
 ### Eclipse ###
 .apt_generated
 .classpath

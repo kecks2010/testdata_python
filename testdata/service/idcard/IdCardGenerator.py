@@ -1,4 +1,4 @@
-from src.model.idcard import IdCard
+from testdata.model.idcard import IdCard
 from random import randrange
 from random import random
 from datetime import datetime
