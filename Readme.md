@@ -1,5 +1,26 @@
 # Testdata
 
+## Deployment
+
+To use the project, you have to do the following steps:
+
+    cd <project_folder>
+    git clone https://github.com/kecks2010/testdata.git
+    cd testdata
+    git status
+
+You should get the following output:
+
+    On branch mater
+    Your branch is up to date with 'origin/master'.
+
+    nothing to commit, working tree clean
+
+And now, you have to install the project to your local python environment.
+
+    poetry install
+    poetry build
+
 ## ID card validator and generator
 In most cases, providing personal data is completely sufficient. However, there are also use cases where personal data
 must be validated. One type of validation is to compare the entered data with the data on the identity card or passport.
