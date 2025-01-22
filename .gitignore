@@ -14,6 +14,9 @@ target/
 .idea/uiDesigner.xml
 .idea/vcs.xml
 .idea/workspace.xml
+.idea
+
+
 *.iws
 *.iml
 *.ipr
@@ -22,6 +25,7 @@ target/
 /dist
 .venv/
 poetry.lock
+**/__pycache__/
 
 ### Eclipse ###
 .apt_generated
