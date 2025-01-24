@@ -1,46 +1,32 @@
-import sqlite3
-from typing import Dict, List, Optional
+from typing import  Optional
 
 from testdata.model.customer.Address import Address
+from testdata.service.testdata_repository.DatabaseConnection import DatabaseConnection
 
 
 class AddressRepository:
-    def __init__(self, db_path: str):
-        self.db_path = db_path
-        self.index_by_id: Dict[int, Address] = {}
-        self.index_by_customer_id: Dict[int, Address] = {}
+    def __init__(self, db_file: str):
+        self.db_file = db_file
 
-        self._initialize_database()
-        self._load_date()
-
-    def _initialize_database(self):
-        with sqlite3.connect(self.db_path) as conn:
+    def find_by_id(self, id: int) -> Optional[Address]:
+        with DatabaseConnection(self.db_file) as conn:
             cursor = conn.cursor()
             cursor.execute("""
-                CREATE TABLE IF NOT EXISTS addresses (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    street TEXT,
-                    number TEXT,
-                    postal_code TEXT,
-                    city TEXT,
-                    state TEXT,
-                    country TEXT,
-                    address_type TEXT,
-                    customer_id INTEGER
-                )
-            """)
-            conn.commit()
+                SELECT * FROM addresses WHERE id = ?
+            """, (id,))
+            row = cursor.fetchone()
+            if row:
+                address = self._map_address(row)
+                return address
 
-    def _load_date(self):
-        with sqlite3.connect(self.db_path) as conn:
-            cursor = conn.cursor()
-            cursor.execute("SELECT * FROM addresses")
-            rows = cursor.fetchall()
-
-            for row in rows:
-                address = Address(*row)
-                self.index_by_id[address.id] = address
-                if address.customer_id not in self.index_by_customer_id:
-                    self.index_by_customer_id[address.customer_id] = []
-                self.index_by_customer_id[address.customer_id].append(address)
-
+    @staticmethod
+    def _map_address(row) -> Address:
+        return Address(
+            id=row["id"],
+            street=row["street"],
+            number=row["number"],
+            postal_code=row["postal_code"],
+            city=row["city"],
+            state=row["state"],
+            country=row["country"]
+        )

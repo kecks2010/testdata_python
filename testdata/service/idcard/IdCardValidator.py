@@ -26,13 +26,13 @@ class IdCardValidator:
             case _:
                 raise ValueError("Unexpected IdCardType: " + id_card.id_card_type)
 
-    def is_documentnumber_valid(self, documentnumber, id_card_type : IdCardType):
+    def is_documentnumber_valid(self, documentnumber : str, id_card_type : IdCardType):
         return self.__id_card_generator.generate_check_digit(documentnumber[0:len(documentnumber) - 1]) == \
             documentnumber[len(documentnumber) - 1:] and len(documentnumber) == 10 and \
             self.__not_contains_illegal_characters(documentnumber, id_card_type) and \
             self.__check_first_digit(documentnumber, id_card_type)
 
-    def is_birthday_date_valid(self, birthday) -> bool:
+    def is_birthday_date_valid(self, birthday : str) -> bool:
         if len(birthday) != 7:
             return False
         birthday_without_check_digit = birthday[0:len(birthday)-1]
@@ -46,7 +46,7 @@ class IdCardValidator:
             self.__id_card_generator.generate_check_digit(birthday[0:len(birthday) - 1]) == \
                 birthday[len(birthday) - 1:]
 
-    def is_expiry_date_valid(self, expiry_date) -> bool:
+    def is_expiry_date_valid(self, expiry_date : str) -> bool:
         if len(expiry_date) != 7:
             return False
         expiry_date_without_check_digit = expiry_date[0:len(expiry_date)-1]
@@ -58,7 +58,7 @@ class IdCardValidator:
                 expiry_date[len(expiry_date) - 1:]
 
     @staticmethod
-    def __not_contains_illegal_characters(documentnumber, id_card_type : IdCardType) -> bool:
+    def __not_contains_illegal_characters(documentnumber : str, id_card_type : IdCardType) -> bool:
         match id_card_type:
             case "OLD_IDENTITY_CARD" | "TEMPORARY_PASSPORT" | "CHILDREN_PASSPORT":
                 return documentnumber[2:] . isdigit()
@@ -68,7 +68,7 @@ class IdCardValidator:
                 raise ValueError("Unexpected IdCardType: " + id_card_type)
 
     @staticmethod
-    def __check_first_digit(documentnumber, id_card_type : IdCardType) -> bool:
+    def __check_first_digit(documentnumber : str, id_card_type : IdCardType) -> bool:
         match id_card_type:
             case "OLD_IDENTITY_CARD":
                 return documentnumber[0].isdigit()
