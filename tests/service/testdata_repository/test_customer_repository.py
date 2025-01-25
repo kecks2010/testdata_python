@@ -8,7 +8,7 @@ from testdata.service.testdata_repository.CustomerRepository import CustomerRepo
 class MyTestCase(unittest.TestCase):
     def test_find_customer_by_first_name_and_last_name(self):
         customer_repository = CustomerRepository("../../../database/testdata.db")
-        customer = customer_repository.find_by_name("Harry", "Potter")
+        customer = customer_repository.find_by_first_name_and_last_name("Harry", "Potter")
 
         self.assertIsNotNone(customer)
         self.assertEqual(customer.id, 1)
@@ -57,7 +57,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_find_customer_by_first_name_and_last_name_not_exist(self):
         customer_repository = CustomerRepository("../../../database/testdata.db")
-        customer = customer_repository.find_by_name("Ginny", "Weasley")
+        customer = customer_repository.find_by_first_name_and_last_name("Ginny", "Weasley")
 
         self.assertIsNone(customer)
 

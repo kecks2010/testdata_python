@@ -7,6 +7,12 @@ from datetime import datetime
 import re
 
 class IdCardValidator:
+    """
+        This class provides methods to validate the id cards and id card information.
+
+        Author:
+            Mirko Werner
+    """
     _instance = None
     __id_card_generator = IdCardGenerator()
 

@@ -8,6 +8,28 @@ from testdata.model.customer.Payment import Payment
 
 @dataclass
 class Customer:
+    """
+        Represents a customer entry.
+
+        Author:
+            Mirko Werner
+
+        Attributes:
+            id (int): id of the customer entry.
+            gender (str): gender of the customer.
+            first_name (str): first name of the customer.
+            last_name (str): last name of the customer.
+            birth_date (datetime): date of the customer.
+            birth_place (str): place of the customer.
+            death_date (datetime): date of the customer.
+            death_place (str): place of the customer.
+            phone_number (str): phone number of the customer.
+            mobile_number (str): mobile number of the customer.
+            email_address (str): email address of the customer.
+            addresses (List[Address]): addresses of the customer.
+            logins (List[Login]): logins of the customer.
+            payments (List[Payment]): payments of the customer.
+        """
     id: Optional[int]
     gender: Optional[str]
     first_name: str

@@ -1,6 +1,12 @@
 from enum import Enum
 
 class State(Enum):
+    """
+        Definition of states.
+
+        Author:
+            Mirko Werner
+        """
     DE_BB = ("Brandenburg", "DE-BB", "BB")
     DE_BE = ("Berlin", "DE-BE", "BE")
     DE_BW = ("Baden-Württemberg", "DE-BW", "BW")

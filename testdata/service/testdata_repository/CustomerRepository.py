@@ -11,10 +11,16 @@ from testdata.service.testdata_repository.DatabaseConnection import DatabaseConn
 
 
 class CustomerRepository:
+    """
+        This class provides methods to access the test data database and returns customer objects.
+
+        Author:
+            Mirko Werner
+    """
     def __init__(self, db_file: str):
         self.db_file = db_file
 
-    def find_by_name(self, first_name: str, last_name: str) -> Optional[Customer]:
+    def find_by_first_name_and_last_name(self, first_name: str, last_name: str) -> Optional[Customer]:
         if first_name is None or last_name is None:
             raise ValueError("first_name or last_name must not be none")
         with DatabaseConnection(self.db_file) as conn:

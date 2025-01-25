@@ -5,6 +5,12 @@ from testdata.service.testdata_repository.DatabaseConnection import DatabaseConn
 
 
 class AddressRepository:
+    """
+        This class provides methods to access the test data database and returns address objects.
+
+        Author:
+            Mirko Werner
+    """
     def __init__(self, db_file: str):
         self.db_file = db_file
 

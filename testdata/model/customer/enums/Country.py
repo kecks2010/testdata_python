@@ -2,6 +2,12 @@ from enum import Enum
 
 
 class Country(Enum):
+    """
+        Definition of countries.
+
+        Author:
+            Mirko Werner
+        """
     AFGHANISTAN = ("Afghanistan", "Afghanistan", "AF", "AFG")
     ALBANIA = ("Albania", "Albanien", "AL", "ALB")
     ALGERIA = ("Algeria", "Algerien", "DZ", "DZA")

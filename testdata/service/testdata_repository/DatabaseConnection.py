@@ -1,6 +1,12 @@
 import sqlite3
 
 class DatabaseConnection:
+    """
+        Implementation of the database connection,
+
+        Author:
+            Mirko Werner
+        """
     def __init__(self, db_file: str):
         self.db_file = db_file
 

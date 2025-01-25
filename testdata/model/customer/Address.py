@@ -11,7 +11,22 @@ from testdata.model.customer.enums.Country import Country
 from testdata.model.customer.enums.State import State
 
 class Address(object):
+    """
+        Represents an address entry for a customer.
 
+        Author:
+            Mirko Werner
+
+        Attributes:
+            id (int): id of the address entry.
+            street (str): street of the address.
+            number (str): number of the address.
+            postal_code (str): postal code of the address.
+            city (str): city of the address.
+            state (State): state of the address.
+            country (Country): Country of the address.
+            address_type (AddressType): type of the address.
+        """
     def __init__(self, id: Optional[int], street: Optional[str], number: Optional[str], postal_code: str, city: str,
                  state: Optional[str], country: str, address_type: Optional[str] = None):
         self.id = id

@@ -16,12 +16,27 @@ class Gender(StrEnum):
     NOT_SPECIFIED = "NOT_SPECIFIED"
 
 class IdCard(object):
+    """
+        Represents an id_card entry.
+
+        Author:
+            Mirko Werner
+
+        Attributes:
+            documentnumber (str): document number with check_digit of an id_card
+            birth_date (str): birth_date with check_digit of an id_card.
+            gender (Gender): gender of an id_card for passports.
+            expiry_date (str): expiry_date with check_digit of an id_card.
+            version (str): version of an id_card for passport and new identity card with version.
+            check_digit (str): expiry date of the payment entry.
+            id_card_type (IdCardType): types of different ID cards.
+        """
 
     nationality = "D"
     gender = None
     version = None
 
-    def __init__(self, documentnumber, birth_date : str, gender : Optional[Gender], expiry_date : str,
+    def __init__(self, documentnumber : str, birth_date : str, gender : Optional[Gender], expiry_date : str,
                  version : Optional[str], check_digit : str, id_card_type : IdCardType):
         if not isinstance(id_card_type, IdCardType):
             raise TypeError ("id_card_type must be of type IdCardType")

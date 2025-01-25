@@ -5,6 +5,13 @@ from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
 class IdCardGenerator:
+    """
+        This class provides methods to generate id cards like identity cards and passports and returns corresponding
+        objects.
+
+        Author:
+            Mirko Werner
+    """
     _instance = None
     id_card_type = None
 
