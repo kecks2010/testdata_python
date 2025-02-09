@@ -7,8 +7,8 @@ class AddressType(Enum):
 
 from typing import Optional
 
-from testdata.model.customer.enums.Country import Country
-from testdata.model.customer.enums.State import State
+from testdata.model.customer.enums.country import Country
+from testdata.model.customer.enums.state import State
 
 class Address(object):
     """

@@ -3,11 +3,11 @@ from typing import Optional
 
 from dateutil.tz import tz
 
-from testdata.model.customer.Address import Address
-from testdata.model.customer.Customer import Customer
-from testdata.model.customer.Login import Login
-from testdata.model.customer.Payment import Payment
-from testdata.service.testdata_repository.DatabaseConnection import DatabaseConnection
+from testdata.model.customer.address import Address
+from testdata.model.customer.customer import Customer
+from testdata.model.customer.login import Login
+from testdata.model.customer.payment import Payment
+from testdata.service.testdata_repository.database_connection import DatabaseConnection
 
 
 class CustomerRepository:

@@ -1,7 +1,7 @@
 from typing import  Optional
 
-from testdata.model.customer.Address import Address
-from testdata.service.testdata_repository.DatabaseConnection import DatabaseConnection
+from testdata.model.customer.address import Address
+from testdata.service.testdata_repository.database_connection import DatabaseConnection
 
 
 class AddressRepository:

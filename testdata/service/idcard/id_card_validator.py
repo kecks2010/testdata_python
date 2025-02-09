@@ -1,8 +1,7 @@
 from dateutil.relativedelta import relativedelta
 
-from testdata.model.idcard import IdCard
-from testdata.model.idcard.IdCard import IdCardType
-from testdata.service.idcard.IdCardGenerator import IdCardGenerator
+from testdata.model.idcard.id_card import IdCardType, IdCard
+from testdata.service.idcard.id_card_generator import IdCardGenerator
 from datetime import datetime
 import re
 

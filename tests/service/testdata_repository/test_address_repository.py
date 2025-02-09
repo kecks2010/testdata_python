@@ -1,9 +1,8 @@
 import unittest
 
-from testdata.model.customer.Address import Address
-from testdata.model.customer.enums.Country import Country
-from testdata.model.customer.enums.State import State
-from testdata.service.testdata_repository.AddressRepository import AddressRepository
+from testdata.model.customer.enums.country import Country
+from testdata.model.customer.enums.state import State
+from testdata.service.testdata_repository.address_repository import AddressRepository
 
 
 class TestAddressRepository(unittest.TestCase):

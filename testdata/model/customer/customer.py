@@ -2,9 +2,9 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Optional, List
 
-from testdata.model.customer.Address import Address, AddressType
-from testdata.model.customer.Login import Login
-from testdata.model.customer.Payment import Payment
+from testdata.model.customer.address import Address, AddressType
+from testdata.model.customer.login import Login
+from testdata.model.customer.payment import Payment
 
 @dataclass
 class Customer:

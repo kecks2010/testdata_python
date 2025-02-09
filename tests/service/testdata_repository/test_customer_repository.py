@@ -1,9 +1,7 @@
 from datetime import datetime
 import unittest
 
-from testdata.model.customer.Customer import Customer
-from testdata.service.testdata_repository.AddressRepository import AddressRepository
-from testdata.service.testdata_repository.CustomerRepository import CustomerRepository
+from testdata.service.testdata_repository.customer_repository import CustomerRepository
 
 class MyTestCase(unittest.TestCase):
     def test_find_customer_by_first_name_and_last_name(self):
