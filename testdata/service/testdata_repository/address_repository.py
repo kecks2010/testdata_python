@@ -1,3 +1,4 @@
+import os
 from typing import  Optional
 
 from testdata.model.customer.address import Address
@@ -11,8 +12,9 @@ class AddressRepository:
         Author:
             Mirko Werner
     """
-    def __init__(self, db_file: str):
-        self.db_file = db_file
+    def __init__(self):
+        # self.db_file = os.path.abspath("../../../database/testdata.db")
+        self.db_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../../database/testdata.db")
 
     def find_by_id(self, id: int) -> Optional[Address]:
         with DatabaseConnection(self.db_file) as conn:

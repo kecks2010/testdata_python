@@ -1,7 +1,6 @@
+import os.path
 from datetime import datetime, timezone, timedelta
 from typing import Optional
-
-from dateutil.tz import tz
 
 from testdata.model.customer.address import Address
 from testdata.model.customer.customer import Customer
@@ -17,8 +16,10 @@ class CustomerRepository:
         Author:
             Mirko Werner
     """
-    def __init__(self, db_file: str):
-        self.db_file = db_file
+    def __init__(self):
+        # self.db_file = os.path.abspath("../../../database/testdata.db")
+        self.db_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../../database/testdata.db")
+        print(f"Database Path: {self.db_file}")
 
     def find_by_first_name_and_last_name(self, first_name: str, last_name: str) -> Optional[Customer]:
         if first_name is None or last_name is None:

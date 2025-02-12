@@ -12,7 +12,7 @@ class DatabaseConnection:
 
     def __enter__(self):
         self.connection = sqlite3.connect(self.db_file)
-        self.connection.row_factory = sqlite3.Row  # Ergebnisse als dictionaries
+        self.connection.row_factory = sqlite3.Row
         return self.connection
 
     def __exit__(self, exc_type, exc_val, exc_tb):

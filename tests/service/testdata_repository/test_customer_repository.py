@@ -3,9 +3,9 @@ import unittest
 
 from testdata.service.testdata_repository.customer_repository import CustomerRepository
 
-class MyTestCase(unittest.TestCase):
+class TestCustomerRepository(unittest.TestCase):
     def test_find_customer_by_first_name_and_last_name(self):
-        customer_repository = CustomerRepository("../../../database/testdata.db")
+        customer_repository = CustomerRepository()
         customer = customer_repository.find_by_first_name_and_last_name("Harry", "Potter")
 
         self.assertIsNotNone(customer)
@@ -29,7 +29,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(len(customer.payments), 3)
 
     def test_find_customer_by_first_name_last_name_and_birth_date(self):
-        customer_repository = CustomerRepository("../../../database/testdata.db")
+        customer_repository = CustomerRepository()
         birth_date = datetime(1980, 7, 31, 2)
         customer = customer_repository.find_by_name_and_birthdate("Harry", "Potter", birth_date)
 
@@ -54,17 +54,14 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(len(customer.payments), 3)
 
     def test_find_customer_by_first_name_and_last_name_not_exist(self):
-        customer_repository = CustomerRepository("../../../database/testdata.db")
+        customer_repository = CustomerRepository()
         customer = customer_repository.find_by_first_name_and_last_name("Ginny", "Weasley")
 
         self.assertIsNone(customer)
 
     def test_find_customer_by_first_name_last_name_and_birth_date_not_exist(self):
-        customer_repository = CustomerRepository("../../../database/testdata.db")
+        customer_repository = CustomerRepository()
         birth_date = datetime(1981, 7, 31, 2)
         customer = customer_repository.find_by_name_and_birthdate("Harry", "Potter", birth_date)
 
         self.assertIsNone(customer)
-
-if __name__ == '__main__':
-    unittest.main()

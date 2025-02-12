@@ -69,6 +69,15 @@ CREATE TABLE IF NOT EXISTS payment (
 )
 """)
 
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS product (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    product_id INTEGER NOT NULL,
+    product_name TEXT NOT NULL,
+    price TEXT NOT NULL
+)
+""")
+
 connection.commit()
 connection.close()
 
