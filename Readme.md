@@ -21,6 +21,11 @@ And now, you have to install the project to your local python environment.
     poetry install
     poetry build
 
+## Testdata Repository
+The main feature of this project is the testdata repository. It contains some models for testdata like address,
+customer and product and contains a repository for as realistic as possible customers, real addresses and products of
+the testshop, which is automated in the associated testautomation.
+
 ## ID card validator and generator
 In most cases, providing personal data is completely sufficient. However, there are also use cases where personal data
 must be validated. One type of validation is to compare the entered data with the data on the identity card or passport.
